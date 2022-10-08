@@ -20,9 +20,12 @@ storyWords.forEach((word) => {
 
 });
 console.log(count);
+// used filter method to take of unnecessary words to keep the story short
 storyWords = storyWords.filter((word) => {
   return word !== unnecessaryWord;
 });
+
+// replace misspell words with correct spellings
 storyWords =storyWords.map((word) => {
   if(word === misspelledWord ) {
     return 'beautiful'
@@ -30,6 +33,7 @@ storyWords =storyWords.map((word) => {
     return word;
   }
 });
+//removed bad words 
 
 let badWordIndex = storyWords.findIndex((word) => {
   
@@ -37,6 +41,8 @@ let badWordIndex = storyWords.findIndex((word) => {
   
 });
 //console.log(badWordIndex)
+
+//checked if all the words are shoter then 10 charactors by using .every method 
 storyWords[78] = 'really';
 let lengthCheck = storyWords.every((word) => {
   if(word.length < 10) {
@@ -45,6 +51,8 @@ let lengthCheck = storyWords.every((word) => {
     return false
   }
 })
+
+// found word longer then 10 charactors by usin .findIndex method
 const longerthen = storyWords.findIndex((word) => {
   return word.length > 10;
 })
